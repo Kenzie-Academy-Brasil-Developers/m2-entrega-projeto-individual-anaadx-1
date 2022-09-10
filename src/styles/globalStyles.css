@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Inter:wght@400;600;700&family=Poppins:wght@100;400&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root{
+    --azulClaro: #4263EB;
+    --azulEscuro: #364FC7;
+    --cinza0: #0A0C0D;
+    --cinza1: #212529;
+    --cinza2: #495057;
+    --cinza3: #868E96;
+    --cinza4: #DEE2E6;
+    --cinza5: #f1f1f1;
+    --opacidade1: rgba(33, 37, 41, 0.5);
+    --white: #FFFFFF;
+    --vermelho: #D7443E;
+}
+
+.title1{
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.title2{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.text1{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.text2{ 
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.text3{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+ 
+

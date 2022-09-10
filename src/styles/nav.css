@@ -1,0 +1,25 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--cinza1);
+    color: var(--white);
+    padding: 18px;
+    margin-bottom: 40px;
+}
+
+nav h2{
+margin-left: 8%;
+}
+
+nav div{
+    margin-right: 8%;
+}
+
+@media (min-width: 900px){
+    nav{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 5;
+    }
+}

@@ -1,0 +1,114 @@
+.buttonNav{
+    background-color: var(--cinza2);
+    border: 2px solid var(--cinza2);
+    border-radius: 4px;
+    color: var(--white);
+    padding: 4px 6px;
+    cursor: pointer;
+}
+
+.buttonNav:hover{
+    background-color: var(--cinza1);
+    border: 2px solid var(--cinza1);
+}
+
+.buttonAbrirPost{
+    border-radius: 4px;
+    color: var(--white);
+    padding: 4px 6px;
+    background-color: var(--cinza1);
+    border: 2px solid var(--cinza1);
+    cursor: pointer;
+}
+
+
+.button1{
+    background-color: var(--white);
+    border: 1px solid var(--cinza0);
+    border-radius: 4px;
+    padding: 10px;
+    color: var(--cinza0);
+    font-weight: 600;
+}
+
+.button1:hover{
+    background-color: var(--azulClaro);
+    border-color: var(--azulClaro);
+    color: var(--white);
+}
+
+.button2Disable{
+    height:min-content;
+    background-color: var(--white);
+    border: solid 1px var(--cinza1);
+    color: var(--cinza1);
+    border-radius: 3px;
+    align-self: center;
+    font-weight: 600;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.button2Disable:hover{
+    background-color: var(--cinza4);
+    border: solid 1px var(--cinza4);
+    color: var(--cinza3);
+}
+
+.button3{
+    height:min-content;
+    background-color: var(--white);
+    border: solid 1px var(--cinza1);
+    color: var(--cinza1);
+    padding: 3px 10px;
+    border-radius: 3px;
+    align-self: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button3:hover{
+    background-color: var(--azulClaro);
+    border: 1px solid var(--azulClaro);
+    color: var(--white);
+}
+
+.buttonLike{
+    border: 0;
+    cursor: pointer;
+}
+
+.buttonSeguir{
+    height:min-content;
+    background-color: var(--white);
+    border: solid 1px var(--cinza1);
+    color: var(--cinza1);
+    border-radius: 3px;
+    align-self: flex-start;
+    font-weight: 600;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.buttonSeguir:hover{
+    background-color: rgb(232, 244, 255);
+    border: solid 1px var(--azulEscuro);
+    color: var(--azulEscuro);
+}
+
+.buttonSeguindo{
+    height:min-content;
+    background-color: var(--azulEscuro);
+    border: solid 1px var(--azulEscuro);
+    color: var(--white);
+    border-radius: 3px;
+    align-self: flex-start;
+    font-weight: 600;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+
+
+
+
