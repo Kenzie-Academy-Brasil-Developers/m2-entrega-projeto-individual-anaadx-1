@@ -7,24 +7,70 @@
     <title>Administrador</title>
 </head>
 <body>
+    <section class="modalFuncionarios">
+        <div>
+            
+        </div>
+    </section>
     <header>
         <nav>
             <h2 class="text1">TechPosters</h2>
             <div>
-                <button class="buttonNav">Login</button>
-                <button class="btnRegisterPage2 buttonNav">Registro</button>
+                <button class="buttonNav">Funcionarios</button>
+                <button class="buttonNav">Logout</button>
             </div>
         </nav>
-    </header>
-    <main>
-        <section>
-            <h1>Setores</h1>
+        </header>
+        <main>
             <div>
-                <ul>
-                    <li></li>
-                </ul>
+                <h2>Setores</h2>
+                <button class="buttonNav">Alimenticio</button>
+                <button class="buttonNav">Varejo</button>
+                <button class="buttonNav">Textil</button>
+                <button class="buttonNav">Manufatura</button>
+                <button class="buttonNav">Aeroespacial</button>
+                <button class="buttonNav">Automotiva</button>
+                <button class="buttonNav">TI</button>
+                <button class="buttonNav">Atacado</button>
             </div>
-        </section>
-    </main>
+            <section class="container">
+                <h1 class="title1">Cadastrar nova Empresa</h1>
+                <input id="name" class="input1" type="text" placeholder="Nome da empresa">
+                <input id="openingHour" class="input1" type="text" placeholder="Horario de funcionamento">
+                <input id="description" class="input1" type="text" placeholder="Descrição">
+                <button class="button1 text2" id="btnCreate" >Cadastrar</button>
+            </section>
+            <section>
+                <div>
+                <input id="description" class="input1" type="text" placeholder="Buscar empresa específica">
+                <button class="button1 text2" id="btnCreate">Pesquisar Empresa</button>
+                </div>
+                    <ul class="companies">
+                        <li>
+                           <div class="abrir">
+                            <h1>nome da empresa</h1>
+                           </div>
+                           <div class="companieInfo">
+                            <h3>nome<h3>
+                            <p>horario de funcionamento<p>
+                            <h4>Ramo da atividade<h4>
+                            <button>departamentos</button>
+                           </div>
+                           <div>
+                            <div>
+                                <input id="description" class="input1" type="text" placeholder="Buscar departamento específico">
+                                <button class="button1 text2" id="btnCreate">Pesquisar Departamento</button>
+                            </div>
+                            <ul class="departamentos">
+                                <li>
+                                    <h3>nome</h3>
+                                    <p>descrição</p>
+                                    <button>funcionarios</button>
+                                </li>
+                            </ul>
+                           </div>
+                        </li>
+                    </ul> 
+            </section>
 </body>
 </html>

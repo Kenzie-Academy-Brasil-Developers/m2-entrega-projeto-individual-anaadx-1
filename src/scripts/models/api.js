@@ -20,6 +20,7 @@ export class Api {
                 console.log(res)
             })
             .catch(err => console.log(err))
+            window.location.assign("../../index.html")
         return array
     }
     

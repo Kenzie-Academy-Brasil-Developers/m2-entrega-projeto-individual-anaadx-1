@@ -27,7 +27,11 @@ class RegisterProfileClass {
                     username: nameInput.value
                 }
             
-            await Api.cadastrarUsuario(data)
+             const cadastro = await Api.cadastrarUsuario(data)
+             if(cadastro.email != undefined){
+                window.location.assign("../../index.html")
+             }
+
         })
 
         buttonLoginPage.addEventListener("click", (event) => {
