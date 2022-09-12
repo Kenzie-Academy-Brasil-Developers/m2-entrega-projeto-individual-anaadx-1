@@ -73,7 +73,7 @@
     border-radius: 8px;
     height: 150px;
     gap: 30px;
-    background-color: var(--white);
+    background-color: var(--cinza4);
     height: min-content;
 }
 
