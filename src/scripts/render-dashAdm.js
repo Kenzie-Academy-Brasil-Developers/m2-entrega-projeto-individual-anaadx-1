@@ -189,7 +189,8 @@ export class Render {
         tagPTipoTrabalho.innerText = user.kind_of_work
         tagH3Nivel.innerText = user.professional_level
         button.innerText = "Demitir"
-        button.classList.add(".buttonDelete1")
+        button.classList.add("buttonDelete1")
+        button.classList.add("demitir")
         button.id = user.uuid
 
         tagLi.append(tagH2Nome, tagPTipoTrabalho, tagH3Nivel, button)

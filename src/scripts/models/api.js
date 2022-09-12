@@ -308,7 +308,6 @@ export class Api {
         const array = await fetch(`${this.baseUrl}/departments/dismiss/${userId}`, {
                 method: "PATCH",
                 headers: this.headers,
-                body: JSON.stringify(data)
             })
             .then(res => res.json())
             .then((res) => {

@@ -319,7 +319,24 @@ export class DashAdm {
             await Api.hireDepartmentEmployee(data)
             await Render.renderEmployeeList()
         })
+      
 
+    }
+
+    static async dismissUser() {
+
+        document.addEventListener("click", async (event) => {
+            event.preventDefault()
+            const target = event.target
+
+            if (target.classList.contains("demitir")) {
+                localStorage.removeItem("S7-02: userId")
+                localStorage.setItem("S7-02: userId", target.id)
+                const tokenDep = localStorage.getItem("S7-02: userId")
+                await Api.quitEmployee(tokenDep)
+                await Render.renderEmployeeList()
+            }
+        })
     }
 
     static closeModal() {
@@ -371,4 +388,5 @@ await DashAdm.showEmployeeModal()
 await DashAdm.editDep()
 await DashAdm.deleteDep()
 await DashAdm.contractEmployee()
+await DashAdm.dismissUser()
 DashAdm.closeModal()
