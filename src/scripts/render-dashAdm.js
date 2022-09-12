@@ -137,12 +137,13 @@ export class Render {
     }
 
     static async filterRenderDepartment() {
-        let token = localStorage.getItem("S7-02: companieId")
-        let departments = await Api.getAllCompanieDepartments(token)
+        
         const botaoBusca = document.querySelector("#btnSearchDep")
         const ul = document.querySelector(".departamentos")
 
         botaoBusca.addEventListener("click", async (event) => {
+            let token = localStorage.getItem("S7-02: companieId")
+        let departments = await Api.getAllCompanieDepartments(token)
             event.preventDefault()
             const inputBusca = document.querySelector(".inputDepSearch")
             const pesquisa = await Render.filterRender(inputBusca.value, departments)
