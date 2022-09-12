@@ -65,11 +65,14 @@ export class Render {
 
             if (pesquisa <= 0) {
                 Toast.create("Não há empresas com este nome", "#ff0000")
+                ul.innerHTML = ''
+                Render.renderCompaniesList()
+            }else{
+                pesquisa.forEach((companie) => {
+                    const card = Render.renderCard(companie)
+                    ul.appendChild(card)
+                })
             }
-            pesquisa.forEach((companie) => {
-                const card = Render.renderCard(companie)
-                ul.appendChild(card)
-            })
         })
     }
 
@@ -134,6 +137,7 @@ export class Render {
         let token = localStorage.getItem("S7-02: companieId")
         let departments = await Api.getAllCompanieDepartments(token)
         const botaoBusca = document.querySelector("#btnSearchDep")
+        const ul = document.querySelector(".departamentos")
 
         botaoBusca.addEventListener("click", async (event) => {
             event.preventDefault()
@@ -142,15 +146,16 @@ export class Render {
 
             if (pesquisa <= 0) {
                 Toast.create("Não há departamentos com este nome", "#ff0000")
+                ul.innerHTML = ''
+                Render.renderDepartmentsList()
+            } else {
+                ul.innerHTML = ''
+                pesquisa.forEach((department) => {
+                    const card = Render.renderDepartmentCard(department)
+                    ul.appendChild(card)
+                })
             }
 
-            const ul = document.querySelector(".departamentos")
-            ul.innerHTML = ''
-
-            pesquisa.forEach((department) => {
-                const card = Render.renderDepartmentCard(department)
-                ul.appendChild(card)
-            })
         })
     }
 
