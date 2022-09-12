@@ -1,3 +1,5 @@
+import { Toast } from "../tostify.js"
+
 export class Api {
     static baseUrl = "http://localhost:6278"
     static token = localStorage.getItem("S7-02: token")
@@ -16,10 +18,12 @@ export class Api {
                 body: JSON.stringify(data)
             })
             .then(res => res.json())
-            .then(res => {
-                console.log(res)
+            .then ((res) => {
+                Toast.create("Cadastro bem sucedido!", "#008000")
             })
-            .catch(err => console.log(err))
+            .catch ((err) => {
+                Toast.create(err, "#ff0000")
+            });
         return array
     }
     
@@ -34,12 +38,15 @@ export class Api {
             })
 
             .then(res => res.json())
+            .then((res) =>{
+                    Toast.create("Login realizado com sucesso!", "#008000")
+                })
             .then(res => {
                 localStorage.setItem("S7-02: userId", res.uuid)
                 localStorage.setItem("S7-02: token", res.token || '')
                 return res
             })
-
+            
             .catch(err => console.log(err))
         return userLogin
     }
@@ -118,10 +125,12 @@ export class Api {
             body: JSON.stringify(data)
         })
         .then(res => res.json())
-        .then(res => {
-            console.log(res)
+        .then ((res) => {
+            Toast.create("Informações atualizadas com sucesso!", "#008000")
         })
-        .catch(err => console.log(err))
+        .catch ((err) => {
+            Toast.create(err, "#ff0000")
+        });
     return array
     }
 
@@ -162,10 +171,12 @@ export class Api {
             body: JSON.stringify(data)
         })
         .then(res => res.json())
-        .then(res => {
-            console.log(res)
+        .then ((res) => {
+            Toast.create("Informações atualizadas com sucesso!", "#008000")
         })
-        .catch(err => console.log(err))
+        .catch ((err) => {
+            Toast.create(err, "#ff0000")
+        });
     return array
     }
 
@@ -177,8 +188,12 @@ export class Api {
         })    
         
         .then (res => res.json())
-        .then (res => console.log(res))
-        .catch (err => console.log(err))
+        .then ((res) => {
+            Toast.create("Usuário deletado com sucesso!", "#008000")
+        })
+        .catch ((err) => {
+            Toast.create(err, "#ff0000")
+        });
         
         console.log(user)
         return user
@@ -193,9 +208,12 @@ export class Api {
         })    
         
         .then (res => res.json())
-        .then (res => {
-            console.log(res)})
-        .catch (err => console.log(err))
+        .then ((res) => {
+            Toast.create("Empresa criada com sucesso!", "#008000")
+        })
+        .catch ((err) => {
+            Toast.create(err, "#ff0000")
+        });
 
         return newCompanie
     }
@@ -248,7 +266,12 @@ export class Api {
         })    
         
         .then (res => res.json())
-        .catch (err => console.log(err))
+        .then ((res) => {
+            Toast.create("Departamento criado com sucesso!", "#008000")
+        })
+        .catch ((err) => {
+            Toast.create(err, "#ff0000")
+        });
 
         return departments
     }
@@ -261,10 +284,12 @@ export class Api {
             body: JSON.stringify(data)
         })
         .then(res => res.json())
-        .then(res => {
-            console.log(res)
+        .then ((res) => {
+            Toast.create("Colaborador contratado!", "#008000")
         })
-        .catch(err => console.log(err))
+        .catch ((err) => {
+            Toast.create(err, "#ff0000")
+        });
     return array
     }
 
@@ -276,10 +301,12 @@ export class Api {
             body: JSON.stringify(data)
         })
         .then(res => res.json())
-        .then(res => {
-            console.log(res)
+        .then ((res) => {
+            Toast.create("Colaborador desligado", "#008000")
         })
-        .catch(err => console.log(err))
+        .catch ((err) => {
+            Toast.create(err, "#ff0000")
+        });
         return array
     }
     
@@ -291,10 +318,12 @@ export class Api {
             body: JSON.stringify(data)
         })
         .then(res => res.json())
-        // .then(res => {
-        //     console.log(res)
-        // })
-        .catch(err => console.log(err))
+        .then ((res) => {
+            Toast.create("Editado com sucesso!", "#008000")
+        })
+        .catch ((err) => {
+            Toast.create(err, "#ff0000")
+        });
         return array
     }
 
@@ -306,8 +335,12 @@ export class Api {
         })    
         
         .then (res => res.json())
-        .then (res => console.log(res))
-        .catch (err => console.log(err))
+        .then ((res) => {
+            Toast.create("Deletado com sucesso!", "#008000")
+        })
+        .catch ((err) => {
+            Toast.create(err, "#ff0000")
+        });
         
         console.log(user)
         return user

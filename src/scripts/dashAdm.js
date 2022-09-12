@@ -153,7 +153,7 @@ export class DashAdm {
                 setores.forEach((setor) => {
                     if (setor.description == "Automotiva")
                         localStorage.setItem("S7-02: sectorId", setor.uuid)
-                    localStorage.setItem("S7-02: sectorName", "Automotiva")
+                        localStorage.setItem("S7-02: sectorName", "Automotiva")
                 })
                 Render.renderCompaniesList()
 
@@ -165,7 +165,7 @@ export class DashAdm {
                 localStorage.removeItem("S7-02: TI")
 
                 setores.forEach((setor) => {
-                    if (setor.description == "Alimenticio")
+                    if (setor.description == "TI")
                         localStorage.setItem("S7-02: sectorId", setor.uuid)
                     localStorage.setItem("S7-02: sectorName", "TI")
                 })
@@ -259,7 +259,7 @@ export class DashAdm {
         })
     }
 
-    static async showEmployeeList() {
+    static async showEmployeeModal() {
         const ulDep = document.querySelector(".departamentos")
         const modalFuncionarios = document.querySelector(".modalFuncionarios")
 
@@ -274,6 +274,7 @@ export class DashAdm {
             }
         })
     }
+
 
     static async showDepartments() {
         const modalEmpresas = document.querySelector(".modalEmpresas")
@@ -329,6 +330,7 @@ export class DashAdm {
 }
 
 DashAdm.logout()
+await Render.renderCompaniesList()
 await DashAdm.acessControl()
 await DashAdm.showCompanies()
 await DashAdm.registerCompanie()
@@ -336,7 +338,7 @@ await Render.filterRenderCompanie()
 await DashAdm.showDepartments()
 await DashAdm.registerDepartment()
 await Render.filterRenderDepartment()
-await DashAdm.showEmployeeList()
+await DashAdm.showEmployeeModal()
 await DashAdm.editDep()
 await DashAdm.deleteDep()
 DashAdm.closeModal()
