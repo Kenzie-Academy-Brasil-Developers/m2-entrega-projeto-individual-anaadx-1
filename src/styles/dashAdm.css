@@ -1,4 +1,4 @@
-main{
+main {
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -8,26 +8,26 @@ main{
     margin-bottom: 50px;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
 }
 
-.setores H2{
+.setores H2 {
     font-size: 32px;
 }
 
-.setores{
+.setores {
     margin-bottom: 50px;
 }
 
-.modalEmpresas{
+.modalEmpresas {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.companies{
+.companies {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
@@ -35,7 +35,7 @@ body{
     margin-bottom: 20px;
 }
 
-.companies li{
+.companies li {
     background-color: var(--white);
     border-radius: 5px;
     display: flex;
@@ -44,28 +44,29 @@ body{
     padding: 20px;
 }
 
-.busca{
+.busca {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.modalDepartamentos{
+.modalDepartamentos {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
     gap: 10px;
 }
 
-.departamentos{
+.departamentos {
     display: flex;
-    width: 100%;
+    width: 200px;
     flex-wrap: nowrap;
     overflow-x: auto;
     flex-direction: row;
+    gap: 5px;
 }
 
-.departamentos li{
+.departamentos li {
     background-color: var(--white);
     border-radius: 5px;
     display: flex;
@@ -74,9 +75,15 @@ body{
     padding: 20px;
     width: 100%;
     min-width: 100%;
+    align-items: center;
 }
 
-.listafuncionarios{
+.departamentos div {
+    display: flex;
+    gap: 3px;
+}
+
+.listafuncionarios {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -87,7 +94,7 @@ body{
     border-radius: 5px;
 }
 
-.listafuncionarios ul{
+.listafuncionarios ul {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
@@ -95,7 +102,7 @@ body{
     width: 100%;
 }
 
-.listafuncionarios ul li{
+.listafuncionarios ul li {
     display: flex;
     flex-direction: column;
     width: 30%;
@@ -106,8 +113,8 @@ body{
 }
 
 
-@media(min-width:750px){
-    .departamentos li{
+@media(min-width:750px) {
+    .departamentos li {
         width: 50%;
     }
 }
