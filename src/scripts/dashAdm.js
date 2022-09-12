@@ -11,6 +11,7 @@ export class DashAdm {
     static async acessControl() {
         const token = localStorage.getItem("S7-02: token")
         const users = await Api.getUsers()
+        console.log(users)
         const modalEmpresas = document.querySelector(".modalEmpresas")
 
         modalEmpresas.classList.add("hidden")
@@ -124,7 +125,7 @@ export class DashAdm {
                 setores.forEach((setor) => {
                     if (setor.description == "Manufatura")
                         localStorage.setItem("S7-02: sectorId", setor.uuid)
-                        localStorage.setItem("S7-02: sectorName", "Manufatura")
+                    localStorage.setItem("S7-02: sectorName", "Manufatura")
                 })
                 Render.renderCompaniesList()
 
@@ -210,30 +211,27 @@ export class DashAdm {
         })
     }
 
-    static async editDeleteEmployeeDepartment() {
+    static async editDep() {
         const modalEdit = document.querySelector(".editDep")
         const inputDescriptionDep = document.querySelector(".inputDepEdit")
-        const modalFuncionarios = document.querySelector(".modalFuncionarios")
         const buttonModalEditDep = document.querySelector("#btnEditar")
         const ulDep = document.querySelector(".departamentos")
 
         ulDep.addEventListener("click", async (event) => {
             event.preventDefault()
             const target = event.target
-            console.log(target)
+            console.log("oi")
+            console.log()
 
-            localStorage.removeItem("S7-02: depId")
-            localStorage.setItem("S7-02: depId", target.id)
-            const tokenDep = localStorage.getItem("S7-02: depId")
-            console.log(tokenDep)
-
-            if (target.classList == "buttonEditDep") {
+            if (target.classList.contains("buttonEditDep")) {
                 modalEdit.classList.remove("hidden")
+                localStorage.removeItem("S7-02: depId")
+                localStorage.setItem("S7-02: depId", target.id)
+                const tokenDep = localStorage.getItem("S7-02: depId")
 
                 const data = {
                     description: inputDescriptionDep.value,
                 }
-                console.log(data)
 
                 buttonModalEditDep.addEventListener("click", async (event) => {
                     event.preventDefault()
@@ -241,21 +239,39 @@ export class DashAdm {
                     await Render.renderDepartmentsList()
                 })
             }
-        
-            if (target.classList == "buttonDeleteDep") {
+        })
+    }
+
+    static async deleteDep() {
+        // const ulDep = document.querySelector(".departamentos")
+
+        document.addEventListener("click", async (event) => {
+            event.preventDefault()
+            const target = event.target
+
+            if (target.classList.contains("buttonDeleteDep")) {
+                localStorage.removeItem("S7-02: depId")
+                localStorage.setItem("S7-02: depId", target.id)
+                const tokenDep = localStorage.getItem("S7-02: depId")
                 await Api.deleteDepartment(tokenDep)
                 await Render.renderDepartmentsList()
             }
+        })
+    }
 
-            if (target.classList == "buttonEmployees") {
+    static async showEmployeeList() {
+        const ulDep = document.querySelector(".departamentos")
+        const modalFuncionarios = document.querySelector(".modalFuncionarios")
+
+        ulDep.addEventListener("click", async (event) => {
+            event.preventDefault()
+            const target = event.target
+
+            if (target.classList.contains("buttonEmployees")) {
                 modalFuncionarios.classList.remove("hidden")
-                const backToPage = document.querySelector(".backToPage")
-                backToPage.addEventListener("click", async (event) => {
-                    event.preventDefault()
-                    modalFuncionarios.classList.add("hidden")
-                })
+                localStorage.removeItem("S7-02: depId")
+                localStorage.setItem("S7-02: depId", target.id)
             }
-
         })
     }
 
@@ -314,11 +330,13 @@ export class DashAdm {
 
 DashAdm.logout()
 await DashAdm.acessControl()
-DashAdm.showCompanies()
+await DashAdm.showCompanies()
 await DashAdm.registerCompanie()
 await Render.filterRenderCompanie()
-DashAdm.showDepartments()
-DashAdm.registerDepartment()
-DashAdm.editDeleteEmployeeDepartment()
+await DashAdm.showDepartments()
+await DashAdm.registerDepartment()
 await Render.filterRenderDepartment()
+await DashAdm.showEmployeeList()
+await DashAdm.editDep()
+await DashAdm.deleteDep()
 DashAdm.closeModal()
