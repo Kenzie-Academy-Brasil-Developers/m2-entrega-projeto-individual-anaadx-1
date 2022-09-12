@@ -12,8 +12,6 @@ class OrdinaryDash {
         const users = await Api.getUsers()
         const modalEmpresas = document.querySelector(".modalEmpresas")
 
-        modalEmpresas.classList.add("hidden")
-
         if (!token) {
             window.location.assign("../../index.html")
         }
@@ -21,7 +19,7 @@ class OrdinaryDash {
 
         users.forEach((user) => {
             if (user.token == token) {
-                if (user.is_admin != false) {
+                if (user.is_admin == true) {
                     window.location.assign("../../index.html")
                 }
             }

@@ -44,12 +44,10 @@ export class Api {
             })
 
             .then(res => res.json())
-            .then((res) => {
-                Toast.create("Login realizado com sucesso!", "#008000")
-            })
             .then(res => {
                 localStorage.setItem("S7-02: userId", res.uuid)
                 localStorage.setItem("S7-02: token", res.token || '')
+                Toast.create("Login realizado com sucesso!", "#008000")
                 return res
             })
 

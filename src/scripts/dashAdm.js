@@ -17,8 +17,6 @@ export class DashAdm {
         const users = await Api.getUsers()
         const modalEmpresas = document.querySelector(".modalEmpresas")
 
-        modalEmpresas.classList.add("hidden")
-
         if (!token) {
             window.location.assign("../../index.html")
         }
@@ -76,8 +74,6 @@ export class DashAdm {
             const target = event.target
 
             if (target.innerText == "Alimenticio") {
-                localStorage.removeItem("S7-02: sectorId")
-                localStorage.removeItem("S7-02: sectorName")
 
                 setores.forEach((setor) => {
                     if (setor.description == "Alimenticio")
@@ -93,8 +89,6 @@ export class DashAdm {
 
             }
             if (target.innerText == "Varejo") {
-                localStorage.removeItem("S7-02: sectorId")
-                localStorage.removeItem("S7-02: sectorName")
 
                 setores.forEach((setor) => {
                     if (setor.description == "Varejo")
@@ -108,8 +102,6 @@ export class DashAdm {
 
             }
             if (target.innerText == "Textil") {
-                localStorage.removeItem("S7-02: sectorId")
-                localStorage.removeItem("S7-02: sectorName")
 
                 setores.forEach((setor) => {
                     if (setor.description == "Textil")
@@ -122,8 +114,6 @@ export class DashAdm {
                 modalSectors.classList.add("hidden")
             }
             if (target.innerText == "Manufatura") {
-                localStorage.removeItem("S7-02: sectorId")
-                localStorage.removeItem("S7-02: sectorName")
 
                 setores.forEach((setor) => {
                     if (setor.description == "Manufatura")
@@ -136,8 +126,6 @@ export class DashAdm {
                 modalSectors.classList.add("hidden")
             }
             if (target.innerText == "Aeroespacial") {
-                localStorage.removeItem("S7-02: sectorId")
-                localStorage.removeItem("S7-02: sectorName")
 
                 setores.forEach((setor) => {
                     if (setor.description == "Aeroespacial")
@@ -150,8 +138,7 @@ export class DashAdm {
                 modalSectors.classList.add("hidden")
             }
             if (target.innerText == "Automotiva") {
-                localStorage.removeItem("S7-02: sectorId")
-                localStorage.removeItem("S7-02: sectorName")
+               
 
                 setores.forEach((setor) => {
                     if (setor.description == "Automotiva")
@@ -164,8 +151,6 @@ export class DashAdm {
                 modalSectors.classList.add("hidden")
             }
             if (target.innerText == "TI") {
-                localStorage.removeItem("S7-02: sectorId")
-                localStorage.removeItem("S7-02: TI")
 
                 setores.forEach((setor) => {
                     if (setor.description == "TI")
@@ -178,8 +163,6 @@ export class DashAdm {
                 modalSectors.classList.add("hidden")
             }
             if (target.innerText == "Atacado") {
-                localStorage.removeItem("S7-02: sectorId")
-                localStorage.removeItem("S7-02: sectorName")
 
                 setores.forEach((setor) => {
                     if (setor.description == "Atacado")
@@ -354,6 +337,8 @@ export class DashAdm {
             event.preventDefault()
             sectorModal.classList.remove("hidden")
             companieModal.classList.add("hidden")
+            localStorage.removeItem("S7-02: sectorId")
+            localStorage.removeItem("S7-02: sectorName")
         })
 
         backToCompanieButton.addEventListener("click", async (event) => {
@@ -380,13 +365,13 @@ await Render.renderCompaniesList()
 await DashAdm.acessControl()
 await DashAdm.showCompanies()
 await DashAdm.registerCompanie()
-await Render.filterRenderCompanie()
 await DashAdm.showDepartments()
 await DashAdm.registerDepartment()
-await Render.filterRenderDepartment()
 await DashAdm.showEmployeeModal()
 await DashAdm.editDep()
 await DashAdm.deleteDep()
 await DashAdm.contractEmployee()
 await DashAdm.dismissUser()
+await Render.filterRenderDepartment()
+await Render.filterRenderCompanie()
 DashAdm.closeModal()

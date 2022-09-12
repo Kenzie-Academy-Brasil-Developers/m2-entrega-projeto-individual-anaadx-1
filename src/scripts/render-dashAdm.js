@@ -50,14 +50,17 @@ export class Render {
     }
 
     static async filterRenderCompanie() {
-        let token = localStorage.getItem("S7-02: sectorName")
-        let companies = await Api.getCompaniesSector(token)
+       
         const botaoBusca = document.querySelector("#btnSearchCompanie")
 
         botaoBusca.addEventListener("click", async () => {
-
-            const inputBusca = document.querySelector(".inputSearchCompanie")
-            const pesquisa = await Render.filterRender(inputBusca.value, companies)
+            let token = localStorage.getItem("S7-02: sectorName")
+            let companies = await Api.getCompaniesSector(token)
+            let inputBusca = document.querySelector(".inputSearchCompanie")
+            console.log(token)
+            let pesquisa = await Render.filterRender(inputBusca.value, companies)
+            console.log(pesquisa)
+            console.log(companies)
 
             const ul = document.querySelector(".companies")
             ul.innerHTML = ''
@@ -74,6 +77,7 @@ export class Render {
             }
         })
     }
+
 
     static async filterRender(valor, array) {
         return array.filter(function (value) {
