@@ -89,7 +89,7 @@ body {
     padding: 20px;
     justify-content: center;
     gap: 5px;
-    width: 40%;
+    width: 150px;
     background-color: var(--white);
     border-radius: 5px;
 }
@@ -101,17 +101,33 @@ body {
     gap: 5px;
     width: 100%;
 }
+.listafuncionarios h2{
+    font-size: 20px;
+    align-self: center;
+}
 
 .listafuncionarios ul li {
     display: flex;
     flex-direction: column;
-    width: 30%;
-    min-width: 30%;
+    width: 100%;
+    min-width: 100%;
     gap: 8px;
     padding: 10px;
     justify-content: space-between;
+    align-items: center;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modalDepartamentos div{
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
 
 @media(min-width:750px) {
     .departamentos li {
