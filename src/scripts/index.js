@@ -21,7 +21,7 @@ class LoginPage {
             const resultadoApi = await Api.login(data)
 
             if(resultadoApi.token) {
-                if(resultadoApi.is_admin = true){
+                if(resultadoApi.is_admin == true){
                     window.location.assign("src/pages/dashAdm.html")
                 }else{
                     window.location.assign("src/pages/dashOrdinary.html")

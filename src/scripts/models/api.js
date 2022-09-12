@@ -20,7 +20,6 @@ export class Api {
                 console.log(res)
             })
             .catch(err => console.log(err))
-            window.location.assign("../../index.html")
         return array
     }
     
@@ -58,7 +57,7 @@ export class Api {
     }
 
     //empresa por setor
-    static async getCompaniesSection(setor) {
+    static async getCompaniesSector(setor) {
         //setor = letra maiúscula/sem acento
         const companieSection = await fetch (`${this.baseUrl}/companies/${setor}`, {
             method : "GET",
@@ -73,8 +72,8 @@ export class Api {
     //funcionarios
 
     //informações do usuário logado
-    static async getUsersProfile (userId) {
-        const posts = await fetch (`${this.baseUrl}/users/${userId}`, {
+    static async getUsersProfile () {
+        const user = await fetch (`${this.baseUrl}/users/profile`, {
             method : "GET",
             headers: this.headers,     
         })    
@@ -82,7 +81,7 @@ export class Api {
         .then (res => res.json())
         .catch (err => console.log(err))
 
-        return posts
+        return user
     }
 
     //listar todos os funcionarios do mesmo departamento do usuario logado // passar algo específico?
@@ -195,8 +194,7 @@ export class Api {
         
         .then (res => res.json())
         .then (res => {
-            window.location.assign("../pages/dashAdm.html")
-        })
+            console.log(res)})
         .catch (err => console.log(err))
 
         return newCompanie
@@ -210,7 +208,6 @@ export class Api {
         })    
         
         .then (res => res.json())
-        .then (res => console.log(res))
         .catch (err => console.log(err))
         
         return sectors
@@ -224,7 +221,6 @@ export class Api {
         })    
         
         .then (res => res.json())
-        .then (res => console.log(res))
         .catch (err => console.log(err))
         
         return departments
@@ -238,7 +234,6 @@ export class Api {
         })    
         
         .then (res => res.json())
-        .then (res => console.log(res))
         .catch (err => console.log(err))
         
         return departments
@@ -253,9 +248,6 @@ export class Api {
         })    
         
         .then (res => res.json())
-        .then (res => {
-            window.location.assign("../pages/dashAdm.html")
-        })
         .catch (err => console.log(err))
 
         return departments
@@ -281,6 +273,7 @@ export class Api {
         const array = await fetch (`${this.baseUrl}/departments/dismiss/${userId}`, {
             method: "PATCH",
             headers: this.headers,
+            body: JSON.stringify(data)
         })
         .then(res => res.json())
         .then(res => {
@@ -291,15 +284,16 @@ export class Api {
     }
     
     // Rota para editar a descrição de um departamento
-    static async editDepDescription (depId) {
+    static async editDepDescription (depId, data) {
         const array = await fetch (`${this.baseUrl}/departments/${depId}`, {
             method: "PATCH",
             headers: this.headers,
+            body: JSON.stringify(data)
         })
         .then(res => res.json())
-        .then(res => {
-            console.log(res)
-        })
+        // .then(res => {
+        //     console.log(res)
+        // })
         .catch(err => console.log(err))
         return array
     }

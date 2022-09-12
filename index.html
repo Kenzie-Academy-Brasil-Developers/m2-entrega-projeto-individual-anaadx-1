@@ -11,23 +11,26 @@
     <link rel="stylesheet" href="./src/styles/modal.css">
     <link rel="stylesheet" href="./src/styles/globalStyles.css">
     <link rel="stylesheet" href="./src/styles/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script defer type="module" src="./src/scripts/index.js"></script>
-    <script defer type="module" src="./src/scripts/render.js"></script>
+    <script defer type="module" src="./src/scripts/render-index.js"></script>
     <title>Rede Social</title>
 </head>
 <body>
     <section class="modalIndex hidden modal">
         <div>
             <h3 class="text3">Acesso não autorizado</h3>
-            <p>Essa conta não existe, logo não pode acessar a página dos posts</p>
+            <p>Essa conta não existe, logo não pode acessar a página principal</p>
             <button class="button2Disable closeModal">Entendi</button>
         </div>
     </section>
     <nav>
-        <h2 class="text1">TechPosters</h2>
-        <div>
-            <button class="buttonNav">Login</button>
-            <button class="btnRegisterPage2 buttonNav">Registro</button>
+        <div class="containerNav">
+            <h2 class="text1">ACompanies</h2>
+            <div>
+                <button class="buttonNav">Login</button>
+                <button class="btnRegisterPage2 buttonNav">Registro</button>
+            </div>
         </div>
     </nav>
     <main>
@@ -42,16 +45,16 @@
         <section class="containerEmpresas">
                 <h2>Empresas Parceiras</h2>
                 <section class="containerEmpresas__lista">
-                    <div>
+                    <div class="containerEmpresas__divLi">
                         <h2>Alimentício</h2>
                         <ul  class="Alimenticio">
-                            <!-- <li class="containerEmpresas__li">
+                            <!-- <li">
                                 <h2>Nome da Empresa</h2>
                                 <p>Descrição da Empresa</p>
                             </li> -->
                         </ul>
                     </div>
-                    <div>
+                    <div class="containerEmpresas__divLi">
                         <h2>Varejo</h2>
                         <ul class="Varejo">
                             <!-- <li>
@@ -60,7 +63,7 @@
                             </li> -->
                         </ul>
                     </div>
-                    <div>
+                    <div class="containerEmpresas__divLi">
                         <h2>Textil</h2>
                         <ul class="Textil">
                             <!-- <li>
@@ -69,7 +72,7 @@
                             </li> -->
                         </ul>
                     </div>
-                    <div>
+                    <div class="containerEmpresas__divLi">
                         <h2>Manufatura</h2>
                         <ul class="Manufatura">
                             <!-- <li>
@@ -78,7 +81,7 @@
                             </li> -->
                         </ul>
                     </div>
-                    <div>
+                    <div class="containerEmpresas__divLi">
                         <h2>Aeroespacial</h2>
                         <ul class="Aeroespacial">
                             <!-- <li>
@@ -87,7 +90,7 @@
                             </li> -->
                         </ul>
                     </div>
-                    <div>
+                    <div class="containerEmpresas__divLi">
                         <h2>Automotiva</h2>
                         <ul class="Automotiva">
                             <!-- <li>
@@ -96,7 +99,7 @@
                             </li> -->
                         </ul>
                     </div>
-                    <div>
+                    <div class="containerEmpresas__divLi">
                         <h2>TI</h2>
                         <ul class="TI">
                             <!-- <li>
@@ -105,7 +108,7 @@
                             </li> -->
                         </ul>
                     </div>
-                    <div>
+                    <div class="containerEmpresas__divLi">
                         <h2>Atacado</h2>
                         <ul class="Atacado">
                             <!-- <li>
@@ -117,5 +120,6 @@
                 </section>
         </section>
     </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

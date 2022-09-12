@@ -5,6 +5,18 @@
     display: flex;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.75);
+    animation: comingFromleft 0.5s;
+}
+
+@keyframes comingFromleft{
+    0%{
+        opacity: 0;
+        transform: translate (-30%, -30%)
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
 }
 
 .modalIndex div {
@@ -26,7 +38,8 @@
     padding: 8px;
 }
 
-.containerModalPost {
+
+.modalFuncionarios{
     width: 100%;
     height: 100%;
     position: fixed;
@@ -34,10 +47,22 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 1;
-
+    animation: comingFromleft 0.5s;
 }
 
-.containerModalPost>div {
+@keyframes comingFromleft{
+    0%{
+        opacity: 0;
+        transform: translate (-30%, -30%)
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+.modalFuncionarios>div {
     position: absolute;
     position: relative;
     top: 70px;
@@ -52,57 +77,6 @@
     height: min-content;
 }
 
-.imgEscrito {
-    display: flex;
-}
-
-.imgEscritoEbutton {
-    display: flex;
-    justify-content: space-between;
-}
-
-.nomeProfissao {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5px;
-}
-
-.imgEscrito h3 {
-    color: var(--cinza1);
-    font-size: 16px;
-}
-
-.imgEscrito p {
-    color: var(--cinza2);
-
-}
-
-.containerModalPost__escritoPost {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.containerModalPost button {
-    border: 0;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    color: var(--cinza2);
-    background-color: var(--cinza5);
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    cursor: pointer;
-}
-
-.containerModalPost .title1 {
-    font-size: 22px;
-}
-
-.containerModalPost .text1 {
-    font-size: 14px;
-}
 
 @media (min-width:700px) {
     .containerModalPost>div {

@@ -1,10 +1,12 @@
+button{
+    cursor: pointer;
+}
 .buttonNav{
     background-color: var(--cinza2);
     border: 2px solid var(--cinza2);
     border-radius: 4px;
     color: var(--white);
     padding: 4px 6px;
-    cursor: pointer;
 }
 
 .buttonNav:hover{
@@ -12,13 +14,14 @@
     border: 2px solid var(--cinza1);
 }
 
-.buttonAbrirPost{
+.buttonAbrir{
     border-radius: 4px;
     color: var(--white);
     padding: 4px 6px;
     background-color: var(--cinza1);
     border: 2px solid var(--cinza1);
-    cursor: pointer;
+    width: min-content;
+    max-height: min-content;
 }
 
 
@@ -46,7 +49,6 @@
     align-self: center;
     font-weight: 600;
     padding: 8px;
-    cursor: pointer;
 }
 
 .button2Disable:hover{
@@ -64,7 +66,6 @@
     border-radius: 3px;
     align-self: center;
     font-weight: 600;
-    cursor: pointer;
 }
 
 .button3:hover{
@@ -73,40 +74,39 @@
     color: var(--white);
 }
 
-.buttonLike{
-    border: 0;
-    cursor: pointer;
-}
-
-.buttonSeguir{
-    height:min-content;
-    background-color: var(--white);
-    border: solid 1px var(--cinza1);
-    color: var(--cinza1);
-    border-radius: 3px;
-    align-self: flex-start;
-    font-weight: 600;
-    padding: 4px 8px;
-    cursor: pointer;
-}
-
-.buttonSeguir:hover{
-    background-color: rgb(232, 244, 255);
-    border: solid 1px var(--azulEscuro);
-    color: var(--azulEscuro);
-}
-
-.buttonSeguindo{
-    height:min-content;
-    background-color: var(--azulEscuro);
-    border: solid 1px var(--azulEscuro);
+.buttonDelete1{
+    border-radius: 4px;
     color: var(--white);
-    border-radius: 3px;
-    align-self: flex-start;
-    font-weight: 600;
-    padding: 4px 8px;
-    cursor: pointer;
+    padding: 4px 6px;
+    background-color: rgb(223, 0, 0);
+    border: 2px solid black;
+    width: min-content;
+    max-height: min-content;
 }
+
+.setores{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.setores__buttons{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.buttonSetores{
+    font-size: 26px;
+    padding: 50px;
+    width: 100%;
+
+}
+
+
 
 
 
