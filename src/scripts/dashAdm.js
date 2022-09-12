@@ -225,6 +225,7 @@ export class DashAdm {
             localStorage.removeItem("S7-02: depId")
             localStorage.setItem("S7-02: depId", target.id)
             const tokenDep = localStorage.getItem("S7-02: depId")
+            console.log(tokenDep)
 
             if (target.classList == "buttonEditDep") {
                 modalEdit.classList.remove("hidden")
@@ -284,6 +285,7 @@ export class DashAdm {
         const editModal = document.querySelector(".editDep")
         const closeEditDepModal = document.querySelector(".closeEditModal")
         const backToPage = document.querySelector(".backToPage")
+        const modalFuncionarios = document.querySelector(".modalFuncionarios")
 
         backToSectorButton.addEventListener("click", async (event) => {
             event.preventDefault()
