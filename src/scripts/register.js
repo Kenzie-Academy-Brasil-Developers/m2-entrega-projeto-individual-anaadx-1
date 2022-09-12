@@ -14,23 +14,23 @@ class RegisterProfileClass {
         const buttonLoginPage = document.querySelector(".buttonLoginPage")
         const buttonLoginPage2 = document.querySelector(".buttonLoginPage2")
         const buttonLoginPage3 = document.querySelector(".buttonLoginPage3")
-        
+
 
         buttonRegister.addEventListener("click", async (event) => {
 
-                event.preventDefault()
+            event.preventDefault()
 
-                const data = {
-                    password: passwordInput.value,
-                    email: emailInput.value, 
-                    professional_level: workInput.value, 
-                    username: nameInput.value
-                }
-            
-             const cadastro = await Api.cadastrarUsuario(data)
-             if(cadastro.email != undefined){
+            const data = {
+                password: passwordInput.value,
+                email: emailInput.value,
+                professional_level: workInput.value,
+                username: nameInput.value
+            }
+
+            const cadastro = await Api.cadastrarUsuario(data)
+            if (cadastro.email != undefined) {
                 window.location.assign("../../index.html")
-             }
+            }
 
         })
 
@@ -48,7 +48,7 @@ class RegisterProfileClass {
             event.preventDefault()
             window.location.assign("../../index.html")
         })
-}
+    }
 }
 
 await RegisterProfileClass.createProfile()

@@ -19,7 +19,7 @@ export class EditUser {
                 email: inputEmail.value,
                 password: inputPassword.value
             }
-            await Api.updateUserInfo (data)
+            await Api.updateUserInfo(data)
         })
     }
 }

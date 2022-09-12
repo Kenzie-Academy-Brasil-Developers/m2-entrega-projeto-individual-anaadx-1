@@ -28,8 +28,7 @@ export class Render {
 
         const tagLi = document.createElement("li")
 
-        const tagH2Nome = document.createElement("div")
-        tagH2Nome.classList.add("h2")
+        const tagH2Nome = document.createElement("h2")
         const tagPHorario = document.createElement("p")
         const tagH4Ramo = document.createElement("h4")
         const buttonDepartamentos = document.createElement("button")
@@ -67,7 +66,7 @@ export class Render {
                 Toast.create("Não há empresas com este nome", "#ff0000")
                 ul.innerHTML = ''
                 Render.renderCompaniesList()
-            }else{
+            } else {
                 pesquisa.forEach((companie) => {
                     const card = Render.renderCard(companie)
                     ul.appendChild(card)
@@ -160,42 +159,70 @@ export class Render {
     }
 
     static async renderEmployeeList() {
-        let token = localStorage.getItem("S7-02: sectorName")
-        let companies = await Api.getCompaniesSector(token)
-        const ul = document.querySelector(".companies")
+        let token = localStorage.getItem("S7-02: depId")
+        let users = await Api.getUsers()
+        console.log(users)
+        const ul = document.querySelector(".listafuncionarios__ul")
         ul.innerHTML = ''
 
-        companies.forEach((companie) => {
-
-            const card = Render.renderEmployeeCard(companie)
-            ul.appendChild(card)
+        users.forEach((user) => {
+            if (user.is_admin != true && user.department_uuid == token) {
+                const card = Render.renderEmployeeCard(user)
+                ul.appendChild(card)
+            } 
         })
+
 
     }
 
-    static renderEmployeeCard(companie) {
+    static renderEmployeeCard(user) {
 
         const tagLi = document.createElement("li")
 
         const tagH2Nome = document.createElement("div")
-        tagH2Nome.classList.add("h2")
-        const tagPHorario = document.createElement("p")
-        const tagH4Ramo = document.createElement("h4")
-        const buttonDepartamentos = document.createElement("button")
-        buttonDepartamentos.classList.add("buttonDepartments")
-        buttonDepartamentos.classList.add("buttonAbrir")
+        const tagPTipoTrabalho = document.createElement("p")
+        const tagH3Nivel = document.createElement("h4")
+        const button = document.createElement("button")
 
-        tagLi.key = companie.sectors.uuid
-        tagLi.id = companie.uuid
-        tagH2Nome.innerText = companie.name
-        tagPHorario.innerText = companie.opening_hours
-        tagH4Ramo.innerText = companie.sectors.description
-        buttonDepartamentos.innerText = "Departamentos"
-        buttonDepartamentos.id = companie.uuid
+        tagLi.id = user.uuid
+        tagH2Nome.innerText = user.username
+        tagPTipoTrabalho.innerText = user.kind_of_work
+        tagH3Nivel.innerText = user.professional_level
+        button.innerText = "Demitir"
+        button.classList.add(".buttonDelete1")
+        button.id = user.uuid
 
-        tagLi.append(tagH2Nome, tagPHorario, tagH4Ramo, buttonDepartamentos)
+        tagLi.append(tagH2Nome, tagPTipoTrabalho, tagH3Nivel, button)
 
         return tagLi
+
+    }
+
+    static async renderAvailebleEmployeeList() {
+        let users = await Api.getUsers()
+        const selectUser = document.getElementById("selectUser")
+        selectUser.innerHTML = ""
+
+        users.forEach((user) => {
+            if(user.is_admin != true && user.department_uuid == null){
+                let optionCliente = Render.renderAvailebleEmployeeCard(user)
+                selectUser.appendChild(optionCliente)
+            }
+        });
+    }
+
+    static renderAvailebleEmployeeCard(user) {
+
+        let{
+            uuid,
+            username
+        } = user
+
+        let tagOption = document.createElement("option")
+        tagOption.value = uuid
+        tagOption.innerText = username
+
+        return tagOption
 
     }
 

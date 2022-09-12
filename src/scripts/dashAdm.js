@@ -4,6 +4,9 @@ import {
 import {
     Render
 } from "./render-dashAdm.js";
+import {
+    Toast
+} from "./tostify.js";
 
 
 
@@ -12,7 +15,6 @@ export class DashAdm {
     static async acessControl() {
         const token = localStorage.getItem("S7-02: token")
         const users = await Api.getUsers()
-        console.log(users)
         const modalEmpresas = document.querySelector(".modalEmpresas")
 
         modalEmpresas.classList.add("hidden")
@@ -154,7 +156,7 @@ export class DashAdm {
                 setores.forEach((setor) => {
                     if (setor.description == "Automotiva")
                         localStorage.setItem("S7-02: sectorId", setor.uuid)
-                        localStorage.setItem("S7-02: sectorName", "Automotiva")
+                    localStorage.setItem("S7-02: sectorName", "Automotiva")
                 })
                 Render.renderCompaniesList()
 
@@ -221,8 +223,6 @@ export class DashAdm {
         ulDep.addEventListener("click", async (event) => {
             event.preventDefault()
             const target = event.target
-            console.log("oi")
-            console.log()
 
             if (target.classList.contains("buttonEditDep")) {
                 modalEdit.classList.remove("hidden")
@@ -272,10 +272,12 @@ export class DashAdm {
                 modalFuncionarios.classList.remove("hidden")
                 localStorage.removeItem("S7-02: depId")
                 localStorage.setItem("S7-02: depId", target.id)
+
+                Render.renderEmployeeList()
+                Render.renderAvailebleEmployeeList()
             }
         })
     }
-
 
     static async showDepartments() {
         const modalEmpresas = document.querySelector(".modalEmpresas")
@@ -290,6 +292,32 @@ export class DashAdm {
             Render.renderDepartmentsList()
             modalDepartamentos.classList.remove("hidden")
             modalEmpresas.classList.add("hidden")
+        })
+    }
+
+    static async contractEmployee() {
+        const selectUser = document.getElementById("selectUser")
+        const searchUser = document.getElementById("searchUser")
+        const chooseUser = document.getElementById("chooseUser")
+        let tokenUser = localStorage.getItem("S7-02: userId")
+        let tokenDep = localStorage.getItem("S7-02: depId")
+
+        searchUser.addEventListener('click', async (event) => {
+            event.preventDefault()
+            Toast.create("funcionário escolhido", "#008000")
+            localStorage.removeItem("S7-02: userId")
+            localStorage.setItem("S7-02: userId", selectUser.value)
+
+        })
+
+        chooseUser.addEventListener("click", async (event) => {
+            event.preventDefault()
+            const data = {
+                user_uuid: tokenUser,
+                department_uuid: tokenDep
+            }
+            await Api.hireDepartmentEmployee(data)
+            await Render.renderEmployeeList()
         })
 
     }
@@ -342,4 +370,5 @@ await Render.filterRenderDepartment()
 await DashAdm.showEmployeeModal()
 await DashAdm.editDep()
 await DashAdm.deleteDep()
+await DashAdm.contractEmployee()
 DashAdm.closeModal()
