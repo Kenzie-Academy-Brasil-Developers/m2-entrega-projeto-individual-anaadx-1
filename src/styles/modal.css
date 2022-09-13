@@ -120,7 +120,7 @@
 }
 
 
-@media (min-width:1000px) {
+@media (min-width:1250px) {
     .containerModalPost>div {
         width: 40%;
     }
@@ -140,6 +140,9 @@
         gap: 150px;
     }
 
+    .modalFuncionarios>div {
+        overflow-y: unset;
+    }
     .listafuncionarios{
         width: 400px;
         height: 400px;
