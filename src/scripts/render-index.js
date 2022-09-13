@@ -60,8 +60,7 @@ export class Render {
 
         const tagLi = document.createElement("li")
 
-        const tagH2Nome = document.createElement("div")
-        tagH2Nome.classList.add("h2")
+        const tagH2Nome = document.createElement("h2")
         const tagPDescricao = document.createElement("p")
         
         tagLi.key = companie.sectors.uuid
