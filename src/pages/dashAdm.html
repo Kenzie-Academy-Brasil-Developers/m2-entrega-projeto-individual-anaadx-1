@@ -32,14 +32,15 @@
                     </li>
                 </ul>
             </div>
-            <div class="contratarFuncionario">
+            <div class="editarFuncionario">
                 <form class="container">
-                    <label class="title1" for="user">Escolha o funcionário que deseja contratar para este
-                        departamento</label>
-
+                    <label class="title1" for="user">Escolha o funcionário que deseja editar ou contratar</label>
                     <select id="selectUser" class="input1" name="user"></select>
-
                     <button class="button1 text2" id="searchUser">Escolher</button>
+                    <input class="input1 usernameEmployee" type="text" placeholder="Editar nome">
+                    <input class="input1 emailEmployee" type="text" placeholder="Editar email">
+                    <input class="input1 passwordEmployee" type="text" placeholder="Editar senha">
+                    <button class="button1 text2" id="chooseEditEmployee">Editar</button>
                     <button class="button1 text2" id="chooseUser">Contratar funcionário</button>
                 </form>
             </div>
@@ -105,7 +106,8 @@
                 <button class="button1 text2" id="btnCreateDep">Cadastrar</button>
             </section>
             <div>
-                <input id="description" class="input1 inputDepSearch" type="text" placeholder="Buscar departamento específico">
+                <input id="description" class="input1 inputDepSearch" type="text"
+                    placeholder="Buscar departamento específico">
                 <button class="button1 text2" id="btnSearchDep">Pesquisar Departamento</button>
             </div>
             <ul class="departamentos">
@@ -117,7 +119,8 @@
             </ul>
             <section class="editDep hidden">
                 <div class="busca">
-                    <input class="input1 inputDepEdit" type="text" placeholder="Digite a nova descrição do departamento">
+                    <input class="input1 inputDepEdit" type="text"
+                        placeholder="Digite a nova descrição do departamento">
                     <button class="button1 text2" id="btnEditar">Editar</button>
                 </div>
                 <button class="closeEditModal">close</button>

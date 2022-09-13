@@ -1,11 +1,14 @@
-nav{
+nav {
     background-color: var(--cinza1);
     padding: 18px;
     margin-bottom: 40px;
     width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 5;
 }
 
-.containerNav{
+.containerNav {
     display: flex;
     color: var(--white);
     margin: 0 auto;
@@ -13,12 +16,3 @@ nav{
     width: 80%;
 }
 
-
-@media (min-width: 900px){
-    nav{
-        position: fixed;
-        top: 0;
-        width: 100vw;
-        z-index: 5;
-    }
-}
