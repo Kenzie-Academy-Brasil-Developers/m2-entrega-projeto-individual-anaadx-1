@@ -211,18 +211,17 @@ export class DashAdm {
                 modalEdit.classList.remove("hidden")
                 localStorage.removeItem("S7-02: depId")
                 localStorage.setItem("S7-02: depId", target.id)
-                const tokenDep = localStorage.getItem("S7-02: depId")
-
-                const data = {
-                    description: inputDescriptionDep.value,
-                }
-
-                buttonModalEditDep.addEventListener("click", async (event) => {
-                    event.preventDefault()
-                    await Api.editDepDescription(tokenDep, data)
-                    await Render.renderDepartmentsList()
-                })
             }
+        })
+
+        buttonModalEditDep.addEventListener("click", async (event) => {
+            const tokenDep = localStorage.getItem("S7-02: depId")
+            const data = {
+                description: inputDescriptionDep.value,
+            }    
+            event.preventDefault()
+            await Api.editDepDescription(tokenDep, data)
+            await Render.renderDepartmentsList()
         })
     }
 
