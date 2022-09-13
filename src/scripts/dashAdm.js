@@ -278,35 +278,8 @@ export class DashAdm {
         })
     }
 
-    static async contractEmployee() {
-        const selectUser = document.getElementById("selectUser")
-        const searchUser = document.getElementById("searchUser")
-        const chooseUser = document.getElementById("chooseUser")
-        let tokenUser = localStorage.getItem("S7-02: userId")
-        let tokenDep = localStorage.getItem("S7-02: depId")
 
-        searchUser.addEventListener('click', async (event) => {
-            event.preventDefault()
-            Toast.create("funcionário escolhido", "#008000")
-            localStorage.removeItem("S7-02: userId")
-            localStorage.setItem("S7-02: userId", selectUser.value)
-
-        })
-
-        chooseUser.addEventListener("click", async (event) => {
-            event.preventDefault()
-            const data = {
-                user_uuid: tokenUser,
-                department_uuid: tokenDep
-            }
-            await Api.hireDepartmentEmployee(data)
-            await Render.renderEmployeeList()
-        })
-      
-
-    }
-
-    static async dismissUser() {
+    static async dismissEmployee() {
 
         document.addEventListener("click", async (event) => {
             event.preventDefault()
@@ -317,8 +290,62 @@ export class DashAdm {
                 localStorage.setItem("S7-02: userId", target.id)
                 const tokenDep = localStorage.getItem("S7-02: userId")
                 await Api.quitEmployee(tokenDep)
+                await Render.renderAvailebleEmployeeList()
                 await Render.renderEmployeeList()
             }
+        })
+    }
+
+    static async contractEmployee() {
+        const selectUser = document.getElementById("selectUser")
+        const searchUser = document.getElementById("searchUser")
+        const chooseUser = document.getElementById("chooseUser")
+
+        searchUser.addEventListener('click', async (event) => {
+            event.preventDefault()
+            Toast.create("funcionário escolhido", "#008000")
+            localStorage.removeItem("S7-02: userId")
+            localStorage.setItem("S7-02: userId", selectUser.value)
+        })
+
+        chooseUser.addEventListener("click", async (event) => {
+            let tokenUser = localStorage.getItem("S7-02: userId")
+            let tokenDep = localStorage.getItem("S7-02: depId")
+            event.preventDefault()
+            const data = {
+                user_uuid: tokenUser,
+                department_uuid: tokenDep
+            }
+            await Api.hireDepartmentEmployee(data)
+            await Render.renderEmployeeList()
+        })
+    }
+
+    static async editEmployee(){
+        
+        const editButoon = document.getElementById("chooseEditEmployee")
+        const workModelnput = document.querySelector(".workModelEmployee")
+        const professionalLevelInput =  document.querySelector(".professionalLevelEmployee")
+        const selectUser = document.getElementById("selectEditUser")
+        const chooseUser = document.querySelector("#searchEditUser")
+
+        chooseUser.addEventListener('click', async (event) => {
+            event.preventDefault()
+            localStorage.removeItem("S7-02: userId", selectUser.value)
+            localStorage.setItem("S7-02: userId", selectUser.value)
+            Toast.create("funcionário escolhido", "#008000")
+        })
+
+        editButoon.addEventListener("click", async (event) => {
+            let tokenUser = localStorage.getItem("S7-02: userId")
+            event.preventDefault()
+            const data = {
+                    kind_of_work: workModelnput.value,
+                    professional_level: professionalLevelInput.value
+            }
+            await Api.updateEmployeeInfo(tokenUser, data)
+            await Render.renderEmployeeList()
+            localStorage.removeItem("S7-02: userId")
         })
     }
 
@@ -361,7 +388,6 @@ export class DashAdm {
 }
 
 DashAdm.logout()
-await Render.renderCompaniesList()
 await DashAdm.acessControl()
 await DashAdm.showCompanies()
 await DashAdm.registerCompanie()
@@ -371,7 +397,9 @@ await DashAdm.showEmployeeModal()
 await DashAdm.editDep()
 await DashAdm.deleteDep()
 await DashAdm.contractEmployee()
-await DashAdm.dismissUser()
+await DashAdm.dismissEmployee()
+await DashAdm.editEmployee()
+await Render.renderCompaniesList()
 await Render.filterRenderDepartment()
 await Render.filterRenderCompanie()
 DashAdm.closeModal()

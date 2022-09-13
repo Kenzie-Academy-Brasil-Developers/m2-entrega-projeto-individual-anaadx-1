@@ -37,6 +37,16 @@
     align-self: flex-end;
     padding: 8px;
 }
+.editAdmiss{
+    background-color: white;
+    border-radius: 5px;
+}
+
+.editAdmiss h2{
+    text-align: center;
+    font-size: 36px;
+    padding-bottom: 20px;
+}
 
 .containerModalForms{
     display: flex;
@@ -64,6 +74,7 @@
     width: 150px;
     background-color: var(--white);
     border-radius: 5px;
+    align-self: flex-start;
 }
 
 .listafuncionarios ul {
@@ -120,6 +131,7 @@
 }
 
 
+
 @media (min-width:1250px) {
     .containerModalPost>div {
         width: 40%;
@@ -143,8 +155,15 @@
     .modalFuncionarios>div {
         overflow-y: unset;
     }
+
+    .editAdmiss{
+        padding: 20px;
+        overflow-y: scroll;
+        height: 400px;
+    }
+
     .listafuncionarios{
-        width: 400px;
+        width: 300px;
         height: 400px;
         justify-content: space-between;
     }

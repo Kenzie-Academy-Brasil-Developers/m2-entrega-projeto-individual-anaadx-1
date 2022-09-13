@@ -166,17 +166,20 @@ export class Render {
     static async renderEmployeeList() {
         let token = localStorage.getItem("S7-02: depId")
         let users = await Api.getUsers()
-        console.log(users)
         const ul = document.querySelector(".listafuncionarios__ul")
+        const select = document.getElementById("selectEditUser")
+        select.innerHTML = ''
         ul.innerHTML = ''
+
 
         users.forEach((user) => {
             if (user.is_admin != true && user.department_uuid == token) {
                 const card = Render.renderEmployeeCard(user)
+                const cardSelect = Render.renderAvailebleEmployeeCard(user)
                 ul.appendChild(card)
+                select.appendChild(cardSelect)
             } 
         })
-
 
     }
 
@@ -203,7 +206,7 @@ export class Render {
         return tagLi
 
     }
-
+    
     static async renderAvailebleEmployeeList() {
         let users = await Api.getUsers()
         const selectUser = document.getElementById("selectUser")

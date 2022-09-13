@@ -172,7 +172,7 @@ export class Api {
     }
 
     //atualizar informações do funcionario
-    static async updateEmployeeInfo(userId) {
+    static async updateEmployeeInfo(userId, data) {
         const array = await fetch(`${this.baseUrl}/admin/update_user/${userId}`, {
                 method: "PATCH",
                 headers: this.headers,

@@ -33,18 +33,29 @@
                         </li>
                     </ul>
                 </div>
-                <div class="editarFuncionario">
-                    <form class="container">
-                        <label class="title1" for="user">Escolha o funcionário que deseja editar ou contratar</label>
-                        <select id="selectUser" class="input1" name="user"></select>
-                        <button class="button1 text2" id="searchUser">Escolher</button>
-                        <input class="input1 usernameEmployee" type="text" placeholder="Editar nome">
-                        <input class="input1 emailEmployee" type="text" placeholder="Editar email">
-                        <input class="input1 passwordEmployee" type="text" placeholder="Editar senha">
-                        <button class="button1 text2" id="chooseEditEmployee">Editar</button>
-                        <button class="button1 text2" id="chooseUser">Contratar funcionário</button>
-                    </form>
-                </div>
+                <section class="editAdmiss">
+                    <h2> Contratar e Editar Funcionários</h2>
+                    <div class="editarFuncionario">
+                        <form class="container">
+                            <label class="title2" for="user">Escolha o funcionário que deseja editar</label>
+                            <select id="selectEditUser" class="input1" name="user"></select>
+                            <button class="button1 text2" id="searchEditUser">Escolher</button>
+                            <label class="text1" for="model">Modelo de escrita: home office/hibrido/presencial</label>
+                            <input class="input1 workModelEmployee" name="model" type="text" placeholder="Editar modalidade de trabalho">
+                            <label class="text1" for="level">Modelo de escrita: estágio/sênior/estágio/pleno</label>
+                            <input class="input1 professionalLevelEmployee" name="level" type="text" placeholder="Editar nível profissional">
+                            <button class="button1 text2" id="chooseEditEmployee">Editar</button>
+                        </form>
+                    </div>
+                    <div class="contratarFuncionario">
+                        <form class="container">
+                            <label class="title2" for="user">Escolha o funcionário que deseja contratar</label>
+                            <select id="selectUser" class="input1" name="user"></select>
+                            <button class="button1 text2" id="searchUser">Escolher</button>
+                            <button class="button1 text2" id="chooseUser">Contratar funcionário</button>
+                        </form>
+                    </div>
+                </section>
             </section>
         </div>
     </section>
