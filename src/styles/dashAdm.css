@@ -83,39 +83,7 @@ body {
     gap: 3px;
 }
 
-.listafuncionarios {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    justify-content: center;
-    gap: 5px;
-    width: 150px;
-    background-color: var(--white);
-    border-radius: 5px;
-}
 
-.listafuncionarios ul {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    gap: 5px;
-    width: 100%;
-}
-.listafuncionarios h2{
-    font-size: 20px;
-    align-self: center;
-}
-
-.listafuncionarios ul li {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-width: 100%;
-    gap: 8px;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .container{
     display: flex;

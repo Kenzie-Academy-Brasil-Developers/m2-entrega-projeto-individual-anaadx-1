@@ -21,29 +21,31 @@
     <section class="modalFuncionarios hidden">
         <div>
             <button class="backToPage buttonAbrir">Close</button>
-            <div class="listafuncionarios">
-                <h2>Funcionários</h2>
-                <ul class="listafuncionarios__ul">
-                    <li>
-                        <h2>users.username</h2>
-                        <h3>users.professional_level</h3>
-                        <p>users.kind_of_work</p>
-                        <button class="demitir">Demitir</button>
-                    </li>
-                </ul>
-            </div>
-            <div class="editarFuncionario">
-                <form class="container">
-                    <label class="title1" for="user">Escolha o funcionário que deseja editar ou contratar</label>
-                    <select id="selectUser" class="input1" name="user"></select>
-                    <button class="button1 text2" id="searchUser">Escolher</button>
-                    <input class="input1 usernameEmployee" type="text" placeholder="Editar nome">
-                    <input class="input1 emailEmployee" type="text" placeholder="Editar email">
-                    <input class="input1 passwordEmployee" type="text" placeholder="Editar senha">
-                    <button class="button1 text2" id="chooseEditEmployee">Editar</button>
-                    <button class="button1 text2" id="chooseUser">Contratar funcionário</button>
-                </form>
-            </div>
+            <section class="containerModalForms">
+                <div class="listafuncionarios">
+                    <h2>Funcionários</h2>
+                    <ul class="listafuncionarios__ul">
+                        <li>
+                            <h2>users.username</h2>
+                            <h3>users.professional_level</h3>
+                            <p>users.kind_of_work</p>
+                            <button class="demitir">Demitir</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="editarFuncionario">
+                    <form class="container">
+                        <label class="title1" for="user">Escolha o funcionário que deseja editar ou contratar</label>
+                        <select id="selectUser" class="input1" name="user"></select>
+                        <button class="button1 text2" id="searchUser">Escolher</button>
+                        <input class="input1 usernameEmployee" type="text" placeholder="Editar nome">
+                        <input class="input1 emailEmployee" type="text" placeholder="Editar email">
+                        <input class="input1 passwordEmployee" type="text" placeholder="Editar senha">
+                        <button class="button1 text2" id="chooseEditEmployee">Editar</button>
+                        <button class="button1 text2" id="chooseUser">Contratar funcionário</button>
+                    </form>
+                </div>
+            </section>
         </div>
     </section>
     <header>

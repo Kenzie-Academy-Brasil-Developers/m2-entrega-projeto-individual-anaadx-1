@@ -184,13 +184,13 @@ export class Render {
 
         const tagLi = document.createElement("li")
 
-        const tagH2Nome = document.createElement("div")
+        const tagH3Nome = document.createElement("h3")
         const tagPTipoTrabalho = document.createElement("p")
         const tagH3Nivel = document.createElement("h4")
         const button = document.createElement("button")
 
         tagLi.id = user.uuid
-        tagH2Nome.innerText = user.username
+        tagH3Nome.innerText = user.username
         tagPTipoTrabalho.innerText = user.kind_of_work
         tagH3Nivel.innerText = user.professional_level
         button.innerText = "Demitir"
@@ -198,7 +198,7 @@ export class Render {
         button.classList.add("demitir")
         button.id = user.uuid
 
-        tagLi.append(tagH2Nome, tagPTipoTrabalho, tagH3Nivel, button)
+        tagLi.append(tagH3Nome, tagPTipoTrabalho, tagH3Nivel, button)
 
         return tagLi
 
