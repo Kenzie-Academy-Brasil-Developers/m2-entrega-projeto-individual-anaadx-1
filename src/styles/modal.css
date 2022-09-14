@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: fit-content;
+    height: 30rem;
 }
 .modalFuncionarios{
     width: 100%;
@@ -161,12 +161,12 @@
     .editAdmiss{
         padding: 20px;
         overflow-y: scroll;
-        height: 400px;
+        height: 25rem;
     }
 
     .listafuncionarios{
         width: 300px;
-        height: 250px;
+        height: 25rem;
         justify-content: space-between;
     }
 
