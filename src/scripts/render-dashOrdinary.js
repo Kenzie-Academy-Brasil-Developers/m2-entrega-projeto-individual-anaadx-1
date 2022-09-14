@@ -10,7 +10,7 @@ export class Render {
         console.log(usersDepartment)
         let companiesDepartment = await Api.getDepartmentByCompanie()
         console.log(companiesDepartment)
-        const divUser = document.querySelector(".infoUser")
+        const divUser = document.querySelector(".container_editInfoUser__Info")
         const divCompanieDepartment = document.querySelector(".infoCompanieDepartment")
         const ulEemployees = document.querySelector(".listaFun")
 
@@ -18,24 +18,26 @@ export class Render {
         divCompanieDepartment.innerHTML = ''
         ulEemployees.innerHTML = ''
 
-        usersDepartment.forEach((user) => {
-            if (user.users.uuid == userId) {
-                localStorage.setItem("S7-02: depId", user.users.department_uuid)
-                const card = Render.renderCardUser(user)
-                divUser.appendChild(card)
-            } else {
-                const card = Render.renderCardUser(user)
-                ulEemployees.appendChild(card)
+        usersDepartment.users.forEach((user) => {
+            if(user =! undefined){
+                if (user.uuid == userId) {
+                    localStorage.setItem("S7-02: depId", user.department_uuid)
+                    const card = Render.renderCardUser(user)
+                    divUser.appendChild(card)
+                } else {
+                    const card = Render.renderCardUser(user)
+                    ulEemployees.appendChild(card)
+                }
             }
         })
 
-        companiesDepartment.forEach((info) => {
-            let depId = localStorage.getItem("S7-02: depId")
-            if (depId == info.uuid) {
-                const card = Render.renderCardCompanie(info)
-                divCompanieDepartment.appendChild(card)
-            }
-        })
+        // companiesDepartment.forEach((info) => {
+        //     let depId = localStorage.getItem("S7-02: depId")
+        //     if (depId == info.uuid) {
+        //         const card = Render.renderCardCompanie(info)
+        //         divCompanieDepartment.appendChild(card)
+        //     }
+        // })
 
     }
 
@@ -47,7 +49,7 @@ export class Render {
             username,
             professional_level,
             kind_of_work,
-        } = user.users
+        } = user
 
         if (user.uuid == userId) {
 
