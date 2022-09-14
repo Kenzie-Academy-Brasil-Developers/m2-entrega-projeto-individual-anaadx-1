@@ -36,6 +36,7 @@ main{
     border-radius: 8px;
     height: 300px;
     max-width: 100%;
+    margin-bottom: 50px;
 }
 
 .containerEmpresas h2{
