@@ -31,13 +31,13 @@ export class Render {
             }
         })
 
-        // companiesDepartment.forEach((info) => {
-        //     let depId = localStorage.getItem("S7-02: depId")
-        //     if (depId == info.uuid) {
-        //         const card = Render.renderCardCompanie(info)
-        //         divCompanieDepartment.appendChild(card)
-        //     }
-        // })
+        companiesDepartment.forEach((info) => {
+            let depId = localStorage.getItem("S7-02: depId")
+            if (depId == info.uuid) {
+                const card = Render.renderCardCompanie(info)
+                divCompanieDepartment.appendChild(card)
+            }
+        })
 
     }
 
