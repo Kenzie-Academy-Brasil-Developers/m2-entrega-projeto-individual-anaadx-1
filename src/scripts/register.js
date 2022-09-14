@@ -1,8 +1,7 @@
 import {
     Api
 } from "./models/api.js";
-
-class RegisterProfileClass {
+class RegisterProfileClass{
 
     static async createProfile() {
 

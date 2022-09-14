@@ -3,7 +3,7 @@ import {
 } from "../tostify.js"
 
 export class Api {
-    static baseUrl = "http://localhost:6278"
+    static baseUrl = "http://localhost:6278" 
     static token = localStorage.getItem("S7-02: token")
     static headers = {
         "Content-Type": "application/json",
@@ -22,9 +22,6 @@ export class Api {
                 body: JSON.stringify(data)
             })
             .then(res => res.json())
-            .then((res) => {
-                Toast.create("Cadastro bem sucedido!", "#008000")
-            })
             .catch((err) => {
                 Toast.create(err, "#ff0000")
             });
@@ -45,9 +42,9 @@ export class Api {
 
             .then(res => res.json())
             .then(res => {
-                localStorage.setItem("S7-02: userId", res.uuid)
-                localStorage.setItem("S7-02: token", res.token || '')
-                Toast.create("Login realizado com sucesso!", "#008000")
+                localStorage.setItem("S7-02: userAdmin", res.is_admin)
+                localStorage.setItem("S7-02: userLog", res.uuid)
+                localStorage.setItem("S7-02: token", res.token)
                 return res
             })
 
@@ -101,26 +98,27 @@ export class Api {
 
     //listar todos os funcionarios do mesmo departamento do usuario logado // passar algo específico?
     static async getUsersByDepartament() {
-        const posts = await fetch(`${this.baseUrl}/users/departaments/coworkers`, {
+        const users = await fetch(`${this.baseUrl}/users/departments/coworkers`, {
                 method: "GET",
                 headers: this.headers,
             })
 
             .then(res => res.json())
             .catch(err => console.log(err))
+       
 
-        return posts
+        return users
     }
 
     //listar os departamentos da empresa do usuario logado
-    static async getUsersByDepartament() {
+    static async getDepartmentByCompanie() {
         const departaments = await fetch(`${this.baseUrl}/users/departaments`, {
-                method: "GET",
-                headers: this.headers,
-            })
-
-            .then(res => res.json())
-            .catch(err => console.log(err))
+            method: "GET",
+            headers: this.headers,
+        })
+        
+        .then(res => res.json())
+        .catch(err => console.log(err))
 
         return departaments
     }
@@ -195,7 +193,6 @@ export class Api {
                 headers: this.headers,
             })
 
-            .then(res => res.json())
             .then((res) => {
                 Toast.create("Usuário deletado com sucesso!", "#008000")
             })
@@ -245,7 +242,6 @@ export class Api {
                 method: "GET",
                 headers: this.headers,
             })
-
             .then(res => res.json())
             .catch(err => console.log(err))
 
@@ -258,7 +254,6 @@ export class Api {
                 method: "GET",
                 headers: this.headers,
             })
-
             .then(res => res.json())
             .catch(err => console.log(err))
 
@@ -307,7 +302,6 @@ export class Api {
                 method: "PATCH",
                 headers: this.headers,
             })
-            .then(res => res.json())
             .then((res) => {
                 Toast.create("Colaborador desligado", "#008000")
             })
@@ -340,8 +334,6 @@ export class Api {
                 method: "DELETE",
                 headers: this.headers,
             })
-
-            .then(res => res.json())
             .then((res) => {
                 Toast.create("Deletado com sucesso!", "#008000")
             })
@@ -349,7 +341,6 @@ export class Api {
                 Toast.create(err, "#ff0000")
             });
 
-        console.log(user)
         return user
     }
 }

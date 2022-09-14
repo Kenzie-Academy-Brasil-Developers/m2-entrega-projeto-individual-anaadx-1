@@ -107,6 +107,15 @@ button{
 
 }
 
+.closeEditModal{
+    margin-top: 5px;
+}
+
+.editButtons{
+    display: flex;
+    gap: 5px;
+}
+
 
 
 

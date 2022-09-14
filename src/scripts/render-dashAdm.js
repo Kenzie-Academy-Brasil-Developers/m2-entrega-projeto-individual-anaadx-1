@@ -113,6 +113,7 @@ export class Render {
         buttonFuncionarios.classList.add("buttonEmployees")
         buttonFuncionarios.classList.add("buttonAbrir")
         const tagDiv = document.createElement("div")
+        tagDiv.classList.add("editButtons")
         const buttonDeletarDepartamento = document.createElement("button")
         buttonDeletarDepartamento.classList.add("buttonDeleteDep")
         buttonDeletarDepartamento.classList.add("buttonDelete1")
@@ -126,6 +127,7 @@ export class Render {
         buttonFuncionarios.innerText = "Funcionários"
         buttonFuncionarios.id = department.uuid
         buttonEditarDepartamento.id = department.uuid
+        buttonEditarDepartamento.value = department.name
         buttonEditarDepartamento.innerText = "Editar"
         buttonDeletarDepartamento.id = department.uuid
         buttonDeletarDepartamento.innerText = "Deletar"
@@ -143,7 +145,7 @@ export class Render {
 
         botaoBusca.addEventListener("click", async (event) => {
             let token = localStorage.getItem("S7-02: companieId")
-        let departments = await Api.getAllCompanieDepartments(token)
+             let departments = await Api.getAllCompanieDepartments(token)
             event.preventDefault()
             const inputBusca = document.querySelector(".inputDepSearch")
             const pesquisa = await Render.filterRender(inputBusca.value, departments)

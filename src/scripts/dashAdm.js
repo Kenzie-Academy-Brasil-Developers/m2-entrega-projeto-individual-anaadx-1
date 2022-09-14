@@ -14,21 +14,10 @@ export class DashAdm {
 
     static async acessControl() {
         const token = localStorage.getItem("S7-02: token")
-        const users = await Api.getUsers()
-        const modalEmpresas = document.querySelector(".modalEmpresas")
 
         if (!token) {
             window.location.assign("../../index.html")
         }
-
-
-        users.forEach((user) => {
-            if (user.token == token) {
-                if (user.is_admin != true) {
-                    window.location.assign("../../index.html")
-                }
-            }
-        })
 
     }
 
@@ -202,6 +191,7 @@ export class DashAdm {
         const inputDescriptionDep = document.querySelector(".inputDepEdit")
         const buttonModalEditDep = document.querySelector("#btnEditar")
         const ulDep = document.querySelector(".departamentos")
+        const h2Nome = document.querySelector(".nameDepartment")
 
         ulDep.addEventListener("click", async (event) => {
             event.preventDefault()
@@ -211,6 +201,7 @@ export class DashAdm {
                 modalEdit.classList.remove("hidden")
                 localStorage.removeItem("S7-02: depId")
                 localStorage.setItem("S7-02: depId", target.id)
+                h2Nome.innerText = target.value
             }
         })
 

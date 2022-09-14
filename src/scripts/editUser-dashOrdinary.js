@@ -4,7 +4,7 @@ import {
 
 export class EditUser {
 
-    static editarUsuário() {
+    static async editarUsuário() {
         const inputName = document.querySelector(".userName")
         const inputEmail = document.querySelector(".userEmail")
         const inputPassword = document.querySelector(".userPassword")

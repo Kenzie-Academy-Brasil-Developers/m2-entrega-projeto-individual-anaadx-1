@@ -9,3 +9,15 @@ main{
     
 }
 
+.container_editInfoUser__Edit{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* .container_editInfoUser__Info{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+} */

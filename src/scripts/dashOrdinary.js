@@ -1,29 +1,21 @@
 import {
     Api
-} from "./models/api.js";
+} from "./models/api.js"
+// import {
+//     Render
+// } from "./render-dashOrdinary.js";
 import {
     EditUser
-} from "./editUser.js";
+} from "./editUser-dashOrdinary.js";
 
 class OrdinaryDash {
 
     static async acessControl() {
         const token = localStorage.getItem("S7-02: token")
-        const users = await Api.getUsers()
-        const modalEmpresas = document.querySelector(".modalEmpresas")
 
         if (!token) {
             window.location.assign("../../index.html")
         }
-
-
-        users.forEach((user) => {
-            if (user.token == token) {
-                if (user.is_admin == true) {
-                    window.location.assign("../../index.html")
-                }
-            }
-        })
 
     }
 
@@ -37,6 +29,12 @@ class OrdinaryDash {
     }
 }
 
-EditUser.editarUsuário()
+await EditUser.editarUsuário()
 OrdinaryDash.acessControl()
 OrdinaryDash.logout();
+// await Render.renderUserCompanie()
+console.log("oi")
+let array = await Api.getDepartmentByCompanie()
+console.log(array)
+let outraApi = await Api.getCompanies()
+console.log(outraApi)

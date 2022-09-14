@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,7 @@
     <script defer type="module" src="../scripts/dashOrdinary.js"></script>
     <title>Normal User</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -27,18 +29,53 @@
         </nav>
         </div>
     </header>
-   <main>
-       <section class="container caixaEdit">
-           <h1 class="title1">Editar Perfil</h1>
-           <input id="userName" class="input1 userName" type="text" placeholder="Nome">
-           <input id="userEmail" class="input1 userEmail" type="text" placeholder="Email">
-           <input id="userPassword" class="input1 userPassword" type="text" placeholder="Senha">
-           <button class="button1 text2" id="editUser">Editar</button>
-       </section>
-
-       <section class="userCompanie">
-        
-       </section>
-   </main>
+    <main>
+        <section>
+            <section class="container__editInfoUser">
+                <section class="container container_editInfoUser__Edit">
+                    <h1 class="title1">Editar Perfil</h1>
+                    <input id="userName" class="input1 userName" type="text" placeholder="Nome">
+                    <input id="userEmail" class="input1 userEmail" type="text" placeholder="Email">
+                    <input id="userPassword" class="input1 userPassword" type="text" placeholder="Senha">
+                    <button class="button1 text2" id="editUser">Editar</button>
+                </section>
+                <div class="container container_editInfoUser__Info">
+                    <div class="infoUser">
+                        <div>
+                            <h2>nome do funcionário username</h2>
+                            <h3>email do funcionario email</h3>
+                            <h3>modalidade de trabalho kind_of_work</h3>
+                            <h3>nivel professional_level</h3>
+                        </div>
+                    </div>
+                    <div class="infoCompanieDepartment">
+                        <div>
+                            <div>
+                                <h2>Empresa do funcionario name</h2>
+                                <p>horario de funcionamento opening_hours</p>
+                                <p>descrição description</p>
+                            </div>
+                            <div>
+                                <h2>Departamento departments.name</h2>
+                                <p>descrição departments.description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div>
+                <h2>Funcionários do departamento</h2>
+                <ul class="listaFun">
+                    <li>
+                        <h2>Nome</h2>
+                        <h3>modalidade de trabalho kind_of_work</h3>
+                        <h3>nivel professional_level</h3>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
+
 </html>

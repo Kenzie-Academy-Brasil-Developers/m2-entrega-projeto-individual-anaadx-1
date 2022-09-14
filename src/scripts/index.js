@@ -33,13 +33,11 @@ class LoginPage {
 
         btnRegisterPage.addEventListener("click", (event) => {
             event.preventDefault()
-            console.log("clicou")
             window.location.assign("src/pages/register.html")
         })
 
         btnRegisterPage2.addEventListener("click", (event) => {
             event.preventDefault()
-            console.log("clicou")
             window.location.assign("src/pages/register.html")
         })
 
@@ -51,6 +49,7 @@ class LoginPage {
 }
 
 await LoginPage.login()
+
 
 
 

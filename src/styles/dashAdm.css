@@ -72,29 +72,22 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 20px;
-    width: 100%;
+    padding: 20px 0px;
     min-width: 100%;
     align-items: center;
 }
 
-.departamentos div {
+.modalDepartamentos__divSearch{
     display: flex;
-    gap: 3px;
+    margin-top: 10px;
+    gap: 5px;
+    flex-direction: column;
 }
-
-
 
 .container{
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.modalDepartamentos div{
-    margin-top: 10px;
-    display: flex;
-    gap: 5px;
 }
 
 @media(min-width:750px) {
