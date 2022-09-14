@@ -161,6 +161,7 @@
         padding: 20px;
         overflow-y: scroll;
         height: 25rem;
+        max-height: 80%;
     }
 
     .listafuncionarios{
