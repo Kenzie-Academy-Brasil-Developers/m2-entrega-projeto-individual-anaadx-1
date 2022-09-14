@@ -101,6 +101,10 @@
     align-items: center;
 }
 
+.contratarFuncionario .container{
+    margin-bottom: 20px;
+}
+
 @keyframes comingFromleft{
     0%{
         opacity: 0;

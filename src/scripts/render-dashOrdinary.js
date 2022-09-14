@@ -18,8 +18,8 @@ export class Render {
         divCompanieDepartment.innerHTML = ''
         ulEemployees.innerHTML = ''
 
-        usersDepartment.users.forEach((user) => {
-            if(user =! undefined){
+        usersDepartment[0].users.forEach((user) => {
+            if(user != undefined){
                 if (user.uuid == userId) {
                     localStorage.setItem("S7-02: depId", user.department_uuid)
                     const card = Render.renderCardUser(user)
