@@ -1,23 +1,90 @@
-main{
+main {
     display: flex;
     flex-direction: column;
     gap: 50px;
     width: 80%;
     margin: 0 auto;
-    padding-top: 150px;
+    padding-top: 120px;
     margin-bottom: 50px;
-    
 }
 
-.container_editInfoUser__Edit{
+.container_editInfoUser__Edit {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-/* .container_editInfoUser__Info{
+.container__editInfoUser {
     display: flex;
     flex-direction: column;
     background-color: white;
     border-radius: 5px;
-} */
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.container_editInfoUser__Info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.infoCompanieDepartment>div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.renderOrdinary {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.listaFun {
+    display: flex;
+    gap: 5px;
+    width: 150px;
+    max-width: 150px;
+    height: 200px;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+.listaFun li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 100%;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.listaFun li h2 {
+    font-size: 26px;
+}
+
+@media(min-width:700px) {
+    .listaFun {
+        width: 300px;
+        max-width: 300px;
+    }
+
+}
+
+@media(min-width:900px) {
+    .container__editInfoUser {
+        width: 50%;
+    }
+}
+
+@media(min-width:1200px){
+    .container__editInfoUser {
+        width: 35%;
+    }
+}

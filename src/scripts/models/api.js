@@ -114,7 +114,10 @@ export class Api {
     static async getDepartmentByCompanie() {
         const departaments = await fetch(`${this.baseUrl}/users/departaments`, {
             method: "GET",
-            headers: this.headers,
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${this.token}`
+            }
         })
         
         .then(res => res.json())

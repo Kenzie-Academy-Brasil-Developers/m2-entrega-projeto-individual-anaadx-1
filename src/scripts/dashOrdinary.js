@@ -1,9 +1,9 @@
 import {
     Api
 } from "./models/api.js"
-// import {
-//     Render
-// } from "./render-dashOrdinary.js";
+import {
+    Render
+} from "./render-dashOrdinary.js";
 import {
     EditUser
 } from "./editUser-dashOrdinary.js";
@@ -32,7 +32,9 @@ class OrdinaryDash {
 await EditUser.editarUsuário()
 OrdinaryDash.acessControl()
 OrdinaryDash.logout();
-// await Render.renderUserCompanie()
+await Render.renderUserCompanie()
+
+//TESTES FALHA NA API
 console.log("oi")
 let array = await Api.getDepartmentByCompanie()
 console.log(array)
