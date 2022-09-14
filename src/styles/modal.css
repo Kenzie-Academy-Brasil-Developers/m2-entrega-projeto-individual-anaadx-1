@@ -154,7 +154,7 @@
     }
 
     .modalFuncionarios>div {
-        overflow-y: unset;
+        overflow-y:hidden;
     }
 
     .editAdmiss{
