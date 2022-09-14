@@ -1,0 +1,114 @@
+main{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    max-width: 100%;
+    gap: 20px;
+    flex-direction: column;
+    align-self: center;
+    margin: 0 auto;
+    margin-right: 15%;
+}
+
+.container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--white);
+    padding: 20px;
+    gap: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+}
+
+.container p{
+    align-self: center;
+}
+.containerEmpresas{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px;
+    gap: 20px;
+    border-radius: 8px;
+    height: 300px;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+.containerEmpresas h2{
+    font-size: 36px;
+}
+
+.containerEmpresas__lista{
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: 500px;
+}
+
+.containerEmpresas__lista ul{
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.containerEmpresas__divLi{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.containerEmpresas__divLi ul{
+    gap: 20px;
+}
+
+.containerEmpresas__divLi > h2{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.containerEmpresas__divLi li{
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.containerEmpresas__divLi li h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+@media(min-width: 1200px){
+
+    main{
+        flex-direction: row;
+    }
+
+    .container{
+        width: 30%;
+        height: min-content;
+        padding: 30px 20px;
+        margin-top: 100px;
+    }
+
+    .containerEmpresas{
+        width: 30%;
+        height: min-content;
+        padding: 30px 20px;
+        margin-top: 100px;
+    }
+
+
+}

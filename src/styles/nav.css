@@ -1,0 +1,18 @@
+nav {
+    background-color: var(--cinza1);
+    padding: 18px;
+    margin-bottom: 40px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+.containerNav {
+    display: flex;
+    color: var(--white);
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 80%;
+}
+

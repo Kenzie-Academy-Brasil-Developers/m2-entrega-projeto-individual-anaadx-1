@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/input.css">
+    <link rel="stylesheet" href="../styles/button.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/dashAdm.css">
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script defer type="module" src="../scripts/dashAdm.js"></script>
+    <title>Administrador</title>
+</head>
+
+<body>
+    <section class="modalFuncionarios hidden">
+        <div>
+            <button class="backToPage buttonAbrir">Close</button>
+            <section class="containerModalForms">
+                <div class="listafuncionarios">
+                    <h2>Funcionários</h2>
+                    <ul class="listafuncionarios__ul">
+                    </ul>
+                </div>
+                <section class="editAdmiss">
+                    <h2> Contratar e Editar Funcionários</h2>
+                    <div class="editarFuncionario">
+                        <form class="container">
+                            <label class="title2" for="user">Escolha o funcionário que deseja editar</label>
+                            <select id="selectEditUser" class="input1" name="user"></select>
+                            <button class="button1 text2" id="searchEditUser">Escolher</button>
+                            <label class="text1" for="model">Modelo de escrita: home office/hibrido/presencial</label>
+                            <input class="input1 workModelEmployee" name="model" type="text" placeholder="Editar modalidade de trabalho">
+                            <label class="text1" for="level">Modelo de escrita: estágio/sênior/estágio/pleno</label>
+                            <input class="input1 professionalLevelEmployee" name="level" type="text" placeholder="Editar nível profissional">
+                            <button class="button1 text2" id="chooseEditEmployee">Editar</button>
+                        </form>
+                    </div>
+                    <div class="contratarFuncionario">
+                        <form class="container">
+                            <label class="title2" for="user">Escolha o funcionário que deseja contratar</label>
+                            <select id="selectUser" class="input1" name="user"></select>
+                            <button class="button1 text2" id="searchUser">Escolher</button>
+                            <button class="button1 text2" id="chooseUser">Contratar funcionário</button>
+                        </form>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </section>
+    <header>
+        <nav>
+            <div class="containerNav">
+                <h2 class="text1">ACompanies</h2>
+                <div>
+                    <button class="buttonNav logout">Logout</button>
+                </div>
+            </div>
+        </nav>
+        </div>
+    </header>
+    <main>
+        <div class="setores">
+            <h2>SETORES</h2>
+            <div class="setores__buttons">
+                <button class="buttonSetores" id="71356e75-eda4-405b-bec5-618f8c87dc02">Alimenticio</button>
+                <button class="buttonSetores" id="99a0282f-ead0-42d5-bda2-5f3b9e373b4b">Varejo</button>
+                <button class="buttonSetores" id="164a2dbf-87ab-4109-be30-73165a717e04">Textil</button>
+                <button class="buttonSetores" id="047f6741-39e9-47eb-bee4-b236f8df18ee">Manufatura</button>
+                <button class="buttonSetores" id="a2c45909-0e46-4c60-9b63-21f65616566c">Aeroespacial</button>
+                <button class="buttonSetores" id="e76cc30a-96eb-45c2-93b2-a15ef7aab2b2">Automotiva</button>
+                <button class="buttonSetores" id="17247c6b-5205-4067-9695-278fcb97d592">TI</button>
+                <button class="buttonSetores" id="ee99c41f-14bc-47e3-891b-9ccd9c799d1a">Atacado</button>
+            </div>
+        </div>
+        <section class="modalEmpresas hidden">
+            <button class="backToSectors buttonAbrir">Voltar Para Setores</button>
+            <h2>EMPRESAS</h2>
+            <section class="container">
+                <h1 class="title1">Cadastrar nova Empresa</h1>
+                <input id="name" class="input1 companieName" type="text" placeholder="Nome da empresa">
+                <input id="openingHour" class="input1 companieHour" type="text" placeholder="Horario de funcionamento">
+                <input id="description" class="input1 companieDescription" type="text" placeholder="Descrição">
+                <button class="button1 text2" id="btnCreateComp">Cadastrar</button>
+            </section>
+            <section>
+                <div class="busca">
+                    <input id="description" class="input1 inputSearchCompanie" type="text"
+                        placeholder="Buscar empresa específica">
+                    <button class="button1 text2" id="btnSearchCompanie">Pesquisar Empresa</button>
+                </div>
+                <ul class="companies">
+                </ul>
+            </section>
+        </section>
+        <section class="modalDepartamentos hidden">
+            <button class="closeDepartments buttonAbrir">Close</button>
+            <section class="container">
+                <h1 class="title1">Cadastrar novo departamento</h1>
+                <input id="name" class="input1 departmentName" type="text" placeholder="Nome do departamento">
+                <input id="description" class="input1 departmentDescription" type="text" placeholder="Descrição">
+                <button class="button1 text2" id="btnCreateDep">Cadastrar</button>
+            </section>
+            <div class="modalDepartamentos__divSearch">
+                <input id="description" class="input1 inputDepSearch" type="text"
+                    placeholder="Buscar departamento específico">
+                <button class="button1 text2" id="btnSearchDep">Pesquisar Departamento</button>
+            </div>
+            <ul class="departamentos">
+            </ul>
+            <section class="editDep hidden">
+                <div class="busca">
+                    <h2 class="nameDepartment title1"></h2>
+                    <input class="input1 inputDepEdit" type="text"
+                        placeholder="Digite a nova descrição do departamento">
+                    <button class="button1 text2" id="btnEditar">Editar</button>
+                </div>
+                <button class="closeEditModal buttonAbrir">close</button>
+            </section>
+        </section>
+    </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>

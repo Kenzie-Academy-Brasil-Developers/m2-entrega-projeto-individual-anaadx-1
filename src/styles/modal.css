@@ -1,0 +1,186 @@
+.modalIndex {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    animation: comingFromleft 0.5s;
+}
+
+@keyframes comingFromleft{
+    0%{
+        opacity: 0;
+        transform: translate (-30%, -30%)
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+.modalIndex div {
+    position: absolute;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    height: 150px;
+    color: white;
+    background-color: var(--azulClaro);
+    justify-content: space-between;
+}
+
+.modalIndex div button {
+    align-self: flex-end;
+    padding: 8px;
+}
+.editAdmiss{
+    background-color: white;
+    border-radius: 5px;
+}
+
+.editAdmiss h2{
+    text-align: center;
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+
+.containerModalForms{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 30rem;
+}
+.modalFuncionarios{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+    animation: comingFromleft 0.5s;
+}
+
+.listafuncionarios {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    gap: 5px;
+    width: 150px;
+    background-color: var(--white);
+    border-radius: 5px;
+    align-self: flex-start;
+}
+
+.listafuncionarios ul {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    gap: 5px;
+    width: 100%;
+}
+.listafuncionarios h2{
+    font-size: 20px;
+    align-self: center;
+}
+
+.listafuncionarios ul li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 100%;
+    gap: 8px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes comingFromleft{
+    0%{
+        opacity: 0;
+        transform: translate (-30%, -30%)
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+.modalFuncionarios>div {
+    overflow-y: scroll;
+    position:absolute;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    gap: 30px;
+    background-color: var(--cinza4);
+    margin-bottom: 50px;
+}
+
+.modalFuncionarios>div form{
+    padding: 10px;
+}
+
+
+
+@media (min-width:1250px) {
+    .containerModalPost>div {
+        width: 40%;
+    }
+
+    .modalIndex div {
+        width: 40%;
+        position: absolute;
+        right: 20px;
+        top: 73%;
+    }
+
+    .containerModalForms{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 75%;
+        align-self: center;
+        gap: 150px;
+    }
+
+    .modalFuncionarios>div {
+        overflow-y:hidden;
+    }
+
+    .editAdmiss{
+        padding: 20px;
+        overflow-y: scroll;
+        height: 25rem;
+        max-height: 80%;
+    }
+
+    .listafuncionarios{
+        width: 300px;
+        height: 25rem;
+        justify-content: space-between;
+    }
+
+    .listafuncionarios ul{
+        height: 80%;
+    }
+
+    .listafuncionarios ul li{
+        font-size: 30px;
+    }
+
+    .listafuncionarios h2{
+        height: 20%;
+        font-size: 36px;
+    }
+    
+}

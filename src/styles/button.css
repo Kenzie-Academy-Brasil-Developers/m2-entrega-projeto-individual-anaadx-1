@@ -1,0 +1,124 @@
+button{
+    cursor: pointer;
+}
+.buttonNav{
+    background-color: var(--cinza2);
+    border: 2px solid var(--cinza2);
+    border-radius: 4px;
+    color: var(--white);
+    padding: 4px 6px;
+}
+
+.buttonNav:hover{
+    background-color: var(--cinza1);
+    border: 2px solid var(--cinza1);
+}
+
+.buttonAbrir{
+    border-radius: 4px;
+    color: var(--white);
+    padding: 4px 6px;
+    background-color: var(--cinza1);
+    border: 2px solid var(--cinza1);
+    width: min-content;
+    max-height: min-content;
+}
+
+
+.button1{
+    background-color: var(--white);
+    border: 1px solid var(--cinza0);
+    border-radius: 4px;
+    padding: 10px;
+    color: var(--cinza0);
+    font-weight: 600;
+}
+
+.button1:hover{
+    background-color: var(--azulClaro);
+    border-color: var(--azulClaro);
+    color: var(--white);
+}
+
+.button2Disable{
+    height:min-content;
+    background-color: var(--white);
+    border: solid 1px var(--cinza1);
+    color: var(--cinza1);
+    border-radius: 3px;
+    align-self: center;
+    font-weight: 600;
+    padding: 8px;
+}
+
+.button2Disable:hover{
+    background-color: var(--cinza4);
+    border: solid 1px var(--cinza4);
+    color: var(--cinza3);
+}
+
+.button3{
+    height:min-content;
+    background-color: var(--white);
+    border: solid 1px var(--cinza1);
+    color: var(--cinza1);
+    padding: 3px 10px;
+    border-radius: 3px;
+    align-self: center;
+    font-weight: 600;
+}
+
+.button3:hover{
+    background-color: var(--azulClaro);
+    border: 1px solid var(--azulClaro);
+    color: var(--white);
+}
+
+.buttonDelete1{
+    border-radius: 4px;
+    color: var(--white);
+    padding: 4px 6px;
+    background-color: rgb(223, 0, 0);
+    border: 2px solid black;
+    width: min-content;
+    max-height: min-content;
+}
+
+.setores{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.setores__buttons{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.buttonSetores{
+    font-size: 26px;
+    padding: 50px;
+    width: 100%;
+    background-color: white;
+
+}
+
+.closeEditModal{
+    margin-top: 5px;
+}
+
+.editButtons{
+    display: flex;
+    gap: 5px;
+}
+
+
+
+
+
+
+
